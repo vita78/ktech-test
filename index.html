@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Чат</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" /> 
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      
+        <!--[if lt IE 9]>
+            <script src="js/jquery-1.12.4.min.js"></script>
+        <![endif]-->
+        <!--[if gte IE 9]><!-->
+            <script src="js/jquery-2.2.4.min.js"></script>
+        <!--<![endif]-->
+        <script src="js/script.js"></script>
+        <script src="script/jquery.mousewheel.js"></script>
+        <script src="js/jquery.jscrollpane.min.js"></script>
+        
+
+    </head>
+    <body>
+        <div class="chat-container clearfix">
+           <!-- Левая колонка -->
+            <div class="chat__column_side_left chat__column_theme_normal">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <div class="user user_type_pic">
+                            <img class="user__pic" src="img/avatar.png" alt="">
+                            <div class="ticker ticker_state_not">0</div>
+                            <div class="user_status_noauth"></div>
+                        </div>
+                    </li>
+                    <li class="menu__item">
+                        <div class="user user_type_pic">
+                            <img class="user__pic" src="img/avatar.png" alt="">
+                            <div class="ticker ticker_state_not">0</div>
+                            <div class="user_status_online"></div>
+                            
+                        </div>
+                    </li>
+                    <li class="menu__item">
+                        <div class="user user_type_pic">
+                            <img class="user__pic" src="img/avatar.png" alt="">
+                            <div class="ticker">3</div>
+                            <div class="user_status_write"></div>
+                        </div>
+                    </li>
+                    <li class="menu__item">
+                          <div class="user user_type_pic user_status_current">
+                              <img class="user__pic" src="img/avatar.png" alt="">
+                              <div class="ticker ticker_state_not ">0</div>
+                              <div class="user_status_close"></div>
+                          </div>
+                    </li>
+                    <li class="menu__item">
+                          <div class="user user_type_pic">
+                              <img class="user__pic" src="img/avatar.png" alt="">
+                              <div class="ticker ticker_state_not ">0</div>
+                              <div class="user_status_offline"></div>
+                          </div>
+                    </li>
+                    <li class="menu__item">
+                          <div class="user user_type_pic">
+                              <img class="user__pic user__pic_type_messages" src="img/newmsg.png" alt=""> 
+                              <!-- <span class="fa-stack fa-lg">
+                                 <i class=" fa fa-comments-o fa-stack-1x" ></i> 
+                                <i class="fa  fa-commenting fa-stack-1x"></i>
+                              </span>  -->   
+                              <div class="ticker ticker_type_messages">33</div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Правая колонка (контакт-лист) -->
+            <div class="chat__column_side_right chat__column_theme_normal">
+                <!--Стрелка окна контактов -->
+                <div class="arr-left"></div>
+
+                <!-- Контакт-лист  Header -->
+                <header class="header">
+                    <div class="header__column_side_right">
+                        <button type="button" class="button button_only-icon">
+                           <span class="button__icon button__icon_theme_header">
+                                <i class="fa fa-close"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="header__column">
+                        10  Контактов онлайн
+                    </div>
+                </header>
+
+               <!-- Контакт-лист  Основная секция -->
+                <section class="content">
+                    <ul class="menu menu_theme_normal">
+                        <li class="menu__item">
+                            <div class="user user_type_full ">
+                                <!--div class="user__column_side_left"--><div class="col1">
+
+                                    <img class="user__pic" src="img/avatar_marketing.png" alt="">
+                                    <div class="ticker "> 3</div>
+                                    <div class="user_status_online"></div>
+                                </div>
+                                <!--div class="user__column_side_right" --> <div class="col3">
+                                    <div class="user__time">22/05/2016 14:25</div>
+                                </div>
+                                <!--div class="user__column"--> <div class="col2">
+                                    <div class="user__account">Группа Маркетинг</div>
+                                    <div class="user__msg">Ершова: Привет как дела?</div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="menu__item">
+                            <div class="user user_type_full">
+                                <div class="col1">
+                                    <img class="user__pic" src="img/avatar.png" alt="">
+                                    <div class="ticker ticker_state_not"> 3</div>
+                                    <div class="user_status_online"></div>
+
+                                </div>
+                                <div class="col3">
+                                    <div class="user__time">22/05/2016 14:25</div>
+                                </div>
+                                <div class="col2">
+                                    <div class="user__account">Иван Иванов</div>
+                                    <div class="user__msg">Привет, как дела? Все нормально?</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="menu__item">
+                            <div class="user user_type_full">
+                                <div class="col1">
+                                    <img class="user__pic" src="img/avatar.png" alt="">
+                                    <div class="ticker ticker_state_not"> 3</div>
+                                      <div class="user_status_online"></div>
+                                </div>
+                                <div class="col3">
+                                    <div class="user__time">02/05/2016 12:11</div>
+                                </div>
+                                <div class="col2">
+                                    <div class="user__account">Илья Дудов</div>
+                                    <div class="user__msg">Что по чем?</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="menu__item">
+                            <div class="user user_type_full">
+                                <div class="col1">
+                                    <img class="user__pic" src="img/avatar.png" alt="">
+                                    <div class="ticker"> 2</div>
+                                </div>
+                                <div class="col3">
+                                    <div class="user__time">11/05/2016 09:06</div>
+                                </div>
+                                <div class="col2">
+                                    <div class="user__account">Алексей Прямой</div>
+                                    <div class="user__msg">Ты ответишь за базар</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="menu__item">
+                            <div class="user user_type_full">
+                                <div class="col1">
+                                    <img class="user__pic" src="img/avatar.png" alt="">
+                                    <div class="ticker ticker_state_not"> 0</div>
+                                </div>
+                                <div class="col3">
+                                     <div class="user__time">15/05/2016 14:25</div>
+                                </div>
+                                <div class="col2">
+                                    <div class="user__account">Тимофей  Бодрый</div>
+                                    <div class="user__msg">Привет, как дела? Все нормально?</div>
+                                  </div>
+                              </div>
+                          </li>
+                    </ul>
+                </section> <!-- end Oсновной части -->
+
+ <!-- Контакт-лист Footer -->
+                <footer class="footer">
+
+                    <!-- Поиск -->
+                    <div class="footer-search">
+                        <form class="form-search" action="#">
+                         
+                            <div class="footer-search__column footer-search__column_l">
+                                <div class="select__box">
+                                    <div class="btn-group open">
+                                        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> </a>
+                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <span class="fa fa-caret-down"></span>
+                                        </a>
+                                    </div>
+                                </div>   
+                            </div>
+                            
+                            <div class="footer-search__column footer-search__column_r">
+                                <div class="button__box  button_only-icon button_brick_round-right">
+                                   <div class="button__icon button__icon_theme_search">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-search__column footer-search__column_m">
+                                <div class="input__box input_brick_no-left-right"> 
+                                    <input class="input input_type_search" type ="search" placeholder="Поле поиска..." name="query">
+                                </div>
+                            </div>    
+                        
+                        </form>
+                    </div>
+                    
+                    <!-- Кнопки -->
+                    <div class="footer-buttons">
+                        <a href="#" class="button button_theme_footer">
+                            <img class="button__pic" src="img/btn_create_groupe.png" alt="Новый контакт">
+                             <!-- <i class="fa fa-users"></i> -->
+                             Новый контакт
+                        </a>
+                        <a href="#" class="button button_theme_footer">
+                            <img class="button__pic"  src="img/btn_add_contact.png" alt="Создать группу">
+                            Создать группу
+                        </a>
+                    </div>
+                </footer> <!-- end footer -->
+            </div> <!-- Правая панель -->
+        </div>
+    
+    </body>
+  </html>

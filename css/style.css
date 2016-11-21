@@ -1,0 +1,581 @@
+@font-face{
+  font-family: 'OpenSans';
+  src: local('OpenSans');
+  src: url('font/OpenSans-Regular.eot');
+  src: url('font/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+       url('font/OpenSans-Regular.woff') format('woff'),
+       url('font/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'FontAwesome';
+  src: local('FontAwesome');  
+  src: url('fontawesome-webfont.eot');
+  src: url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fontawesome-webfont.woff') format('woff'),
+       url('fontawesome-webfont.ttf') format('truetype'),
+       url('fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, .chat-container {
+  height: 100%;
+  margin: 0;
+  background-color: #eef3f3;
+}
+
+.chat-container 
+{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width:600px;
+  min-height: 100%;
+  overflow: hidden;
+  font: 16px/1.2 'OpenSans', Helvetica, Arial, sans-serif;
+}
+
+.chat__column_side_left {
+  float: left;
+  width: 60px; 
+  margin: 65px 0 55px 20px;
+  background-color: #c0d6e4;
+}
+
+
+
+.chat__column_side_right {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 20px;
+  bottom: 55px;
+  left: 95px;/*91px;*/
+  background: #fff;
+  min-height: 400px;
+  min-width: 240px;
+}
+
+.content {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 2px;
+  bottom: 64px;
+  padding: 7px 0;
+  overflow: auto;
+  min-height: 300px;
+  color: #999;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 2px;
+  bottom: 0px;
+  padding: 2px 0 0 0px;
+  overflow: auto;
+}
+
+
+
+.chat__column_theme_normal {
+  border: 1px solid #c6d6dd;
+  border-top: none;
+  border-bottom: #789cb2;
+  border-radius: 3px;
+  box-shadow:  0 2px 0px 0 #c6d6dd; xdfdret a   
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* Панель с контактами (правая)*/
+
+/*стрелка-указатель*/
+.arr-left {
+  width: 9px;
+  height: 19px;
+  position: absolute;
+  top: 360px;
+  left: -7px;
+  color: #fff; opacity: 1;
+  font: 20px 'FontAwesome';
+  vertical-align: center;
+  line-height: 20px;
+  text-shadow: -1px 2px 1px #c7ddec;
+}
+
+.arr-left::before{
+  content: '\f0d9';
+}
+
+/* header contact list */
+.header {
+  height: 35px;
+  padding: 0px 10px;
+  border-bottom: 1px solid #e3ecec;
+  font-size: 0.9em;
+  color: #9bc3dc;
+  line-height: 35px;
+}
+
+.header__column {
+  display: inline-block;
+}
+
+.header__column_side_right {
+  float: right;
+}
+
+.button {
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.button__box {
+  height: 23px;
+  border: 1px solid #c7ddec;
+  line-height: 20px;
+}
+
+.button__only-icon {
+  font: 1.2em 'FontAwesome';
+ }
+
+.button__icon_theme_header {
+ color: #ccc;
+}
+
+.button__icon_theme_search {
+ color: #6baacf;
+}
+
+.button_brick_round-right {
+  border-radius: 0 3px 3px 0;
+  border-left: none;
+}
+
+.button_theme_footer {
+  width: 115px;
+  height: 22px;
+  padding-left:20px;
+  border-radius: 3px;
+  /*padding-top: 3px;*/
+  color: #fff;
+  font-size: 11px;
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  background:  #6aaace;
+  line-height: 22px;
+  position: relative;
+}
+
+.button__pic {
+  position: absolute;
+  top: 3px;
+  left:5px;
+}
+
+/* contact list content */
+/*.content {
+  overflow-y: auto;
+  min-height: 300px;
+  
+  max-height: 100%;
+  padding: 0 5px 0 0; 
+  color: #999;
+ }*/
+
+.col1 { /*image*/
+  float: left;
+  width: 40px;
+  margin-left: 0;
+  text-align: center;
+}
+
+.col2 { /*account*/
+  margin: 0 55px 0 45px; /* Отступ справа и слева */
+}
+
+.col3 { /* date time */
+  width: 60px;
+  float: right;
+  padding: 0 5px 5px 5px;
+ }
+
+/* Подвал списка контактов*/
+
+/*Убирает  свечение элементов*/
+ input:focus, select:focus, button:focus {
+   outline: none;
+ }
+
+/*.footer {
+  height: 60px;
+  border-top: 1px solid #e3ecec;
+  padding: 0 5px 3px 5px;
+}*/
+
+.footer-search { /* Секция подвала с поиском */
+  height: 30px;
+  overflow: hidden;
+  padding: 0px 5px 0 5px;
+}
+
+/* Секция подвала с кнопками */
+.footer-buttons {
+  height: 30px;
+  text-align: center;
+}
+
+.footer-search__column {
+  height: 23px;
+}
+
+.footer-search__column_l { /* переключатель - select */
+  float: left;
+  width: 43px;
+ border1: 1px solid #fff;
+ }
+
+.footer-search__column_m { /* поисковое поле */
+  margin: 0 20px 0 43px;
+}
+
+.footer-search__column_r {  /* поисковая кнопка */
+  width: 20px;
+  float: right;
+}
+
+.select__box {
+  border: 1px solid #c7ddec; 
+  border-radius: 3px 0 0 3px; 
+}
+
+.btn-group {
+  height: 23px;
+  width: 42px;
+  line-height: 23px;
+}  
+
+.fa-caret-down, .fa-user {
+  color: #6baacf;
+  font-stretch: ultra-condensed; 
+}
+.select {
+  width: 42px;
+  height: 23px;
+  border: none;
+  background-color: #fff;
+ /*Отменяем стандартное отображение select*/
+ /*for WebKit*/
+  -webkit-appearance: none;
+ /* for FF */
+ -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+ /* appearance: none!important;*/
+  /* кастомная стрелочка*/
+  background: url('../img/find_arrow.png') right 5px center no-repeat;
+  vertical-align: middle;
+  line-height: 23px;
+ }
+
+.select::before {
+  font: 12px 'FontAwesome';
+  color: red;/*#c7ddec;*/
+  content: '\f10c'; /*'\f0dd';*/
+}
+
+.input {
+  border:none;
+  outline: none;
+}
+
+.input__box {
+  height: 23px;
+  border: 1px solid #c7ddec;
+}
+
+.input_brick_no-left-right {
+  border-right: none;
+  border-left: none;
+}
+
+.input_type_search {
+  color: #6baacf;
+  font-size: .8em;
+  height: 20px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+/* Изменение цвета placeholder у поискового поля ввода */
+.input::-webkit-input-placeholder {
+   color: #6baacf;
+}
+
+.input_type_search:-moz-placeholder {
+  color: #6baacf;
+}
+.input_type_search::-moz-placeholder {
+ color: #6baacf;
+}
+
+.input_type_search:-ms-input-placeholder {
+  color: #6baacf;
+}
+
+.input_type_image {
+  margin: 4px 0 0 0;
+}
+
+/*Block menu*/
+.menu {
+  list-style:none;
+  margin: 0;
+  padding: 0;
+
+} 
+
+.menu__item {
+  height: 60px;
+}
+
+.menu__item:hover {
+  background-color: #fff;
+}
+
+.menu__item:last-child, .menu__item:last-child:hover {
+  background-color: #c7ddec;
+}
+
+.menu_theme_normal .menu__item, .menu_theme_normal .menu__item:hover  {
+  border-bottom: 1px solid #e3ecec;
+  background: #fff;
+}
+/*end block menu*/
+
+/* Block user*/
+.user {
+  position:relative;
+  height: 40px;
+  padding: 10px 0 10px 10px;
+ 
+}
+
+.user__account {
+  color: #6baacf;
+  font-size: 0.8em;
+  padding: 0 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.user__msg {
+  font-size: 0.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user__time {
+  text-align: right;
+  font-size: 0.6em;
+  padding: 0 5px 0 5px; 
+}
+
+.user__pic {
+  margin-left: 0px;
+}
+
+.user_type_pic .user__pic_type_messages {
+  margin-top: 10px;
+}
+/*end user*/
+
+/*Статусы пользователей*/
+
+.user_status_online {
+  width: 9px;
+  height: 9px;
+  background: #009f45;
+  border: 2px solid #c0d7e5;
+  border-radius:50%;
+  position: absolute;
+  bottom: 8px;
+  left: 40px;
+  visibility: visible;
+}
+
+.menu__item:hover .user_status_online,
+.menu_theme_normal .menu__item  .user_status_online {
+  border: 2px solid #fff;
+}
+
+.user_status_offline {
+  visibility: hidden;
+ }
+
+.user_status_close {
+  background: #333;
+  border-radius: 3px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 10px;
+  left: 35px;
+  text-align: center;
+  line-height: 10px;  
+}
+
+.user_status_close::before {
+  font: 12px 'FontAwesome';
+  color: #ccc;
+  content: '\f00d';
+}
+
+.user_status_write {
+  width: 16px;
+  height: 16px;
+  background: #c0d7e5;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 8px;
+  left: 35px;
+  visibility: visible;
+  text-align: center;
+  line-height: 9px;  
+}
+
+.user_status_write::before {
+  font-family: 'FontAwesome';
+  color: #275f7e;
+  font-size: 10px;
+  content: '\f040';
+}
+
+.menu__item:hover .user_status_write,
+.menu_theme_normal .menu__item  .user_status_write {
+  background-color: #fff;
+  transition: color .3s;
+}
+
+.user_status_noauth {
+  background: center 0px no-repeat rgba(107, 170, 207, 0.5);
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  text-align: center;
+  line-height: 56px;
+}
+
+.user_status_noauth::after {
+  font-family: 'FontAwesome';
+  position: absolute;
+  left: 26px;
+  top: 1px;
+  color: #fff;
+  font-size: 21px;
+  opacity: .5;
+  content: '\f12a';
+}
+
+.user_status_noauth::before {
+  font-family: 'FontAwesome';
+  color: #d91924;
+  font-size: 30px;
+  opacity: .85;
+  content: '\f06a';
+}
+
+.user_status_current {
+  background: #fff;
+  transition: color .3s;
+}
+
+.active {
+background: #fff;
+}
+
+/* Счетчики непрочитанных сообщений */
+.ticker {
+  position:absolute;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  background: #d91924;
+  border-radius: 3px;
+  color: #fff;
+  top: 7px;
+  left: 7px;
+}
+
+.ticker_state_not {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Позиция счетчика для новых сообщений */
+.ticker_type_messages {
+  top: 10px;
+  left: 35px;
+}
+
+
+/* Стилизация скроллбаров*/
+.content::-webkit-scrollbar-button {
+  background-image:url('');
+  background-repeat:no-repeat;
+  width:6px;
+  height:0px;
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: #bcc0c1;
+}
+
+.content::-webkit-scrollbar-thumb {
+ -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #6babcf;
+  box-shadow:
+    2px 0 0px 1px #6babcf,
+   -2px 0 0px 1px #6babcf;
+}
+
+.content::-webkit-resizer{
+  background-image:url('');
+  background-repeat:no-repeat;
+  width:7px;
+  height:0px
+}
+
+.content::-webkit-scrollbar{
+  width: 1px;
+}
+/*end style scroll*/
+
+
+/*@media all and (min-width: 370px) {
+  .chat-container {
+      width: 60%;
+  }
+}*/
